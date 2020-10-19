@@ -4,31 +4,128 @@ C0112D
 F55E35
 68282A*/
 
-.head{
-    height:70px;
-    /*background: rgb(192,17,45);*/
-    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%);
-    margin:0; 
-    padding:0;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body
 {   
     height: 100%;
-    margin:0;    
+    background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);
+    margin:0;
+    background-repeat: no-repeat;
+    min-height: 100vh;    
 }
 
+/*// NAVIGATION BAR //*/
+/*.head{
+    height:50px;
+    /*background: rgb(192,17,45);
+    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%);
+    margin:0; 
+    padding:0;
+}*/
+
+.nav_container{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 70px;
+    line-height: 70px;
+    border-bottom: 2px solid #6587D8;
+}
+
+.logo {
+    width: 80px;
+    float: left;
+    height: 100%;
+    
+}
+
+.menu {
+    float: right;
+    height: 100%;
+}
+
+.menu li {
+    float: left;
+    width: auto;
+    padding: 0 15px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    list-style: none;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-family: calibri;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.menu li:hover {
+    color: white;
+    background: #6587D8;
+}
+
+
+/*
+.logo img {
+    position: absolute;
+    margin-top: 0;
+}
+nav {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: inline-block;
+    float: right;
+}
+
+nav li a {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem;
+    height: 100%;
+}
+
+nav li a:hover {
+    background-color: #111;
+  }
+*/
+
+
+
+
 .container {
-    /*background: rgb(101,135,216);*/
-background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);
+    /*background: rgb(101,135,216);
+    background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);
 /* background: rgb(192,17,45);
     background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); */
     /*background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;*/
-    min-height: 100vh;
-}
-
-.test {
-    background-image: url();
+    background-position: center;
+    min-height: 100vh;*/
 }
