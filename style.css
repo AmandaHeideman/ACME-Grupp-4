@@ -8,6 +8,7 @@ F55E35
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Montserrat;
 }
 
 body
@@ -62,8 +63,7 @@ body
 .menu li a {
     color: white;
     text-decoration: none;
-    font-family: calibri;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
 }
 
@@ -95,7 +95,7 @@ body
     margin: 25px;
     height: 400px;
     width: 400px;
-    border-radius: 20px;
+    border-radius: 3%;
     background: rgb(168,191,246);
     background: radial-gradient(circle, rgba(168,191,246,0.5) 0%, rgba(101,135,216,1) 100%);
     /*background: linear-gradient(90deg, rgba(168,191,246,0.5) 0%, rgba(101,135,216,0.75) 100%);*/
@@ -103,4 +103,41 @@ body
 
 .displayed_event:hover {
     transform: scale(1.05);
+}
+
+.event_container {
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.event_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+}
+.event_pic {
+    padding: 10px 10px;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    float: left;
+}
+
+.event_date {
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    color: white;
+
+}
+
+.event_location {
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    color: white;
+
 }
