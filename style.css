@@ -3,7 +3,11 @@ efb0c8
 C0112D
 F55E35
 68282A*/
-
+html{
+    font-family: 'Montserrat';
+    color: #efb0c8;
+    line-height: 150%;
+}
 .head{
     height:70px;
     /*background: rgb(192,17,45);*/
@@ -15,20 +19,35 @@ F55E35
 body
 {   
     height: 100%;
-    margin:0;    
-}
-
-.container {
-    /*background: rgb(101,135,216);*/
-background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);
-/* background: rgb(192,17,45);
-    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); */
-    /*background-size: cover;
+    margin:0;   
+    background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);    
     background-repeat: no-repeat;
-    background-position: center;*/
-    min-height: 100vh;
+    background-attachment: fixed;
 }
 
+/* .container {
+    background: rgb(101,135,216);
+
+    background: rgb(192,17,45);
+    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+} */
+
+.div{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
 .test {
     background-image: url();
+}
+#scrum-process{
+    background: #efb0c8;
+    border-radius: 10px;
+    width: 70%;
+    float: right;
+    margin:10px;
 }
