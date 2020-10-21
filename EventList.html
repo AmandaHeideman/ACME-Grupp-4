@@ -12,7 +12,20 @@
     <title>EventList</title>
   </head>
   <body>
-    <header class="head">TEST <span class="test">TEST2</span></header>
+    <div class="navbar">
+      <!--<div class="nav_container"> //Gör ingenting?-->
+        <div class="logo_div">
+          <img src="logga2.png" alt="" class="logo" />
+        </div>
+        <div class="navbar_links">
+          <ul class="menu">
+            <li><a href="main.html">Hem</a></li>
+            <li><a href="EventList.html">Evenemang</a></li>
+            <li><a href="About.html">Om Oss</a></li>
+          </ul>
+        </div>
+      <!--</div>-->
+    </div>
 
     <div><input id="eventInput" type="text" placeholder="Event"></div>
     <div><input id="dateInput" type="text" placeholder="Datum"></div>
@@ -23,9 +36,11 @@
     
     <div id="container" class="container">
       <div id="eventList" class="eventList">
+        <a href="eventDetails.html">
         <div id="listHead" class="listHead">
             <span id="event" class="event">E-Type</span> <span id="date" class="date">15/6</span> <span id="location" class="location">Globen</span>
-        </div>
+          </div>
+        </a>
       </div>
       
       
