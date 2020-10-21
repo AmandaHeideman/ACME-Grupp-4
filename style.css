@@ -42,9 +42,6 @@ body
     margin: auto;
 }
 .test {
-<<<<<<< HEAD
-    background-image: url(logga.png);
-=======
     background-image: url();
 }
 #scrum-process{
@@ -53,5 +50,32 @@ body
     width: 70%;
     float: right;
     margin:10px;
->>>>>>> c0966b941d187378e6c27cc90e4aee87d9e13abb
+}
+
+.eventList{
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background-color: rgba(245,94,53,1);
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+
+.listHead{
+    text-align: center;
+}
+
+.event{
+    float: left;
+}
+
+.location{
+    float: right;
+}
+
+.date{
+    /* text-align: center; */
 }
