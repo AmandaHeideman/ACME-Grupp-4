@@ -14,6 +14,7 @@ html{
     background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%);
     margin:0; 
     padding:0;
+}
 
 *{
     box-sizing: border-box;
@@ -22,9 +23,10 @@ html{
     font-family: Montserrat;
 }
 
-body
-{   
+body {
+    font-family: Montserrat;
     height: 100%;
+/* <<<<<<< HEAD */
     margin:0;   
     background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);    
     background-repeat: no-repeat;
@@ -210,4 +212,129 @@ body
     display: flex;
     color: white;
 
+/* =======  */
+    margin: 0;
+    background: linear-gradient(30deg, rgba(101, 135, 216, 1) 0%, rgba(192, 17, 45, 1) 65%);
+    min-height: 100vh;
+    color: white;
+
+}
+
+.container {
+    /* display: flex; */
+    padding: 30px;
+}
+
+/* .test {
+    background-image: url();
+} */
+
+#innerCon {
+    display: flex;
+}
+
+
+#mainPic {
+    width: 60%;
+    height: 200px;
+    background-color: yellow;
+    /* margin-left: 20px; */
+}
+
+#infoCard {
+    width: 40%;
+    height: 200px;
+    /* background-color:#fff; */
+    background: linear-gradient(90deg, rgba(17,138,192,1) 0%, rgba(245,53,53,1) 0%, rgba(245,94,53,1) 100%);
+
+    margin-left: 20px;
+    color: white;
+    border-radius: 10px;
+    
+    
+
+}
+#infoCard p{
+    padding: 5px;
+    font-weight: lighter;
+    font-size: smaller;
+
+}
+
+#innerCon2 {
+    display: flex;
+    /* border: 1px solid red; */
+
+}
+
+#abouEvent {
+    padding-left: 270px;
+
+}
+
+#textCon {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    padding-left: 150px;
+    opacity: 70%;
+}
+
+.imgCon {
+    /* border: 1px solid black; */
+    float: right;
+    width: 400px;
+    margin-left: 30%;
+
+}
+
+.images {
+
+    border: 1px solid blue;
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+
+}
+
+.resize {
+    height: 200px;
+    width: 300px;
+    
+
+}
+
+#bigPic {
+    height: 100%;
+    width: 100%;
+}
+#ticketsBtn{
+    width: 400px;
+    height: 40px;
+    margin-left: 62.5%;
+    border-radius: 5px;
+    background: inherit;
+    color: white;
+    outline: 3px solid  white ;
+    /* ouline: linear-gradient(to right, red, purple); */
+
+    border: none;
+    /* color: white; */
+    font-weight: bolder;
+    font-size: larger;
+    margin-top: 10px;
+
+    letter-spacing: 2px;
+
+}
+   
+#ticketsBtn:hover{
+    outline:  3px solid  black;
+
+}
+
+
+img{
+    border-radius: 10px;
+/* >>>>>>> Abdullahibranch */
 }
