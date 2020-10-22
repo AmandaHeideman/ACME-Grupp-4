@@ -90,11 +90,11 @@ a{
 .date{
     /* text-align: center; */
     /*background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);*/
-    background: rgb(104,40,42);
+    /* background: rgb(104,40,42);
     background: linear-gradient(0deg, rgba(104,40,42,1) 0%, rgba(239,176,200,0.8253676470588236) 100%);
     margin:0;
     background-repeat: no-repeat;
-    padding: 0px 5px;
+    padding: 0px 5px; */
     /* min-height: 100vh;  */   
 }
 
