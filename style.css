@@ -72,22 +72,26 @@ a{
     color: #efb0c8;
 
 }
-
+/* EVENT LIST CSS */
 .listHead{
-    /* text-align: center; */
+    
     display: flex;
     justify-content: space-between;
 }
 
-/* .event{
+.event{
     float: left;
-} */
 
-/* .location{
+}
+ .location{
     float: right;
-} */
+} 
 
-.date{
+.listBtn{
+    float: right;
+}
+
+/* .date{
     /* text-align: center; */
     /*background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);*/
     /* background: rgb(104,40,42);
@@ -96,7 +100,7 @@ a{
     background-repeat: no-repeat;
     padding: 0px 5px; */
     /* min-height: 100vh;  */   
-}
+
 
 
 /* 
