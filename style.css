@@ -119,9 +119,9 @@ a{
 }
 .menu li:hover {
     background: #6587D8;
-} 
+}  */
 
-*/
+
 
 /* Alternativ 2 */
 .navbar { 
@@ -131,15 +131,16 @@ a{
     overflow: hidden;
     height: 70px;
     line-height: 70px;
-    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%);
+    border-bottom: 2px solid #F55E35;
+   /*  background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); */
 }
 .menu li:hover {
-    background-color: #C0112D;
+    background-color: #F55E35;
 } 
 
 .logo {
     height: 70px;
-    float: left;
+float: left;
 }
 
 .menu {
