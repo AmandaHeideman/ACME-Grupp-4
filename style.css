@@ -339,7 +339,7 @@ a {
 }
 
 .imgCon {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     float: right;
     width: 400px;
     /* margin-left: 30%; */
