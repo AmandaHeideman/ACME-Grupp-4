@@ -76,6 +76,7 @@ a{
 .listHead{
     
     display: flex;
+    
     justify-content: space-between;
 }
 
