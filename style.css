@@ -258,15 +258,14 @@ float: left;
 }
 .event_date {
     padding-top: 80px;
-    padding-left: 30px;
     color: white;
     text-align: center;
-
+    font-size: 1.3rem;
 }
 
 .event_location {
     padding-top: 20px;
-    padding-left: 30px;
+    font-size: 1.3rem;
     color: white;
 }
 
