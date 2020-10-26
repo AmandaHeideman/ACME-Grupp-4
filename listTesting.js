@@ -22,9 +22,11 @@ class Events {
   addEvent(event, date, location) {
     let eventList = document.createElement("div");
     let listHead = document.createElement("div");
+    let buttonsContainer = document.createElement("div");
     this.delete.innerHTML = "Radera";
     this.edit.innerHTML = "Uppdatera";
 
+    buttonsContainer.classList.add("buttons-container")
     this.delete.classList.add("listBtn");
     this.edit.classList.add("listBtn");
 
@@ -44,12 +46,13 @@ class Events {
 
     this.container.appendChild(eventList);
     eventList.appendChild(listHead);
+    eventList.appendChild(buttonsContainer);
     listHead.appendChild(newEventName);
     listHead.appendChild(newEventDate);
     listHead.appendChild(newEventLocation);
     listHead.appendChild(this.break);
-    listHead.appendChild(this.delete);
-    listHead.appendChild(this.edit);
+    buttonsContainer.appendChild(this.delete);
+    buttonsContainer.appendChild(this.edit);
 
     //console.log(this.location)
 
@@ -73,6 +76,8 @@ class Events {
       let updateBtn = document.createElement("button");
       eventList.appendChild(updateBtn);
       updateBtn.innerHTML = "Update Event";
+      buttonsContainer.classList.add("hide");
+
 
       updateBtn.addEventListener("click", function (e) {
         if (updateEventName.value != "") {
@@ -89,6 +94,7 @@ class Events {
         updateEventDate.remove();
         updateEventLocation.remove();
         updateBtn.remove();
+        buttonsContainer.classList.remove("hide");
       });
       // let updateBtn = document.createElement("button");
       //console.log(this.event.innerHTML);
