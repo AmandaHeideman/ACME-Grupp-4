@@ -99,7 +99,8 @@ class Events {
     updateEventLocation.placeholder = "Uppdatera plats";
     updateEventLocation.classList.add("location");
     editButtonsDiv.appendChild(updateEventLocation);
-    let updateEventGenre = document.getElementById("genreInput");
+    let p = document.getElementById("genreInput");
+    let updateEventGenre = p.cloneNode(true);
     editButtonsDiv.appendChild(updateEventGenre);
     let updateBtn = document.createElement("button");
     editButtonsDiv.appendChild(updateBtn);
@@ -108,6 +109,7 @@ class Events {
 
 
     updateBtn.addEventListener("click", function (e) {
+      let buttonsContainer = document.getElementsByClassName("buttons-container");
       if (updateEventName.value != "") {
         updatedEventName.innerHTML = updateEventName.value;
       }
@@ -122,8 +124,8 @@ class Events {
         updatedEventGenre.innerHTML = updateEventGenre.value;
       }
       editButtonsDiv.remove();
-      // buttonsContainer.classList.remove("hide");
-    });
+      buttonsContainer.classList.remove("hide");
+    }); 
   }
   // deleteEvent() {
   //     delete this.container;
