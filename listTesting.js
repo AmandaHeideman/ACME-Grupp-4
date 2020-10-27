@@ -25,7 +25,7 @@ class Events {
     this.genre = document.createElement("span");
     this.delete = document.createElement("button");
     this.edit = document.createElement("button");
-    this.break = document.createElement("br");
+    
   }
 
 
@@ -65,7 +65,7 @@ class Events {
     listHead.appendChild(newEventDate);
     listHead.appendChild(newEventLocation);
     listHead.appendChild(newEventGenre);
-    listHead.appendChild(this.break);
+    
     buttonsContainer.appendChild(this.delete);
     buttonsContainer.appendChild(this.edit);
 
@@ -117,7 +117,7 @@ class Events {
 
     editButtonsDiv.appendChild(updateEventGenre);
     let updateBtn = document.createElement("button");
-    editButtonsDiv.appendChild(updateBtn);
+    eventList.appendChild(updateBtn);
     updateBtn.innerHTML = "Update Event";
     buttonsContainer.classList.add("hide"); //Jag provade att avkommentera denna och kommentera bort rad 74. Testa om det funkar!
 
@@ -138,6 +138,7 @@ class Events {
         updatedEventGenre.innerHTML = updateEventGenre.value;
       }
       editButtonsDiv.remove();
+      updateBtn.remove();
       buttonsContainer.classList.remove("hide");
     }); 
   }

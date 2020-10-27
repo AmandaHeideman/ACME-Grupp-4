@@ -73,10 +73,15 @@ a{
 
 }
 /* EVENT LIST CSS */
+
+.eventTags {
+    display: flex;
+    justify-content: space-between;
+}
 .listHead{
     
     display: flex;
-    
+    flex: 4;
     justify-content: space-between;
 }
 
@@ -91,9 +96,9 @@ a{
     left: 0;
     padding: 20px;
 }
-/* .genre{
+ /* .genre{
     float: right;
-} */
+}  */
 
 /* .event{
     float: left;
