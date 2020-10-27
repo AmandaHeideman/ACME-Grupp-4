@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+  let adminBtn = document.getElementById("adminBtn")
+  let adminInput = document.getElementById("adminInput");
+
+  adminBtn.addEventListener("click", (e) => {
+    adminInput.classList.remove("hide");
+  });
+  
   event.preventDefault();
   let btn = document.getElementById("submitBtn");
 
@@ -70,46 +77,53 @@ class Events {
     
     const self = this;
     this.edit.addEventListener("click", function(e) {
-      self.updateInfo();
-      buttonsContainer.classList.add("hide");
+      //buttonsContainer.classList.add("hide");
+      self.updateInfo(buttonsContainer);
       // let updateBtn = document.createElement("button");
       //console.log(this.event.innerHTML);
       //this.event = document.createElement("input");
       //eventList.appendChild(eventEdit);
     });
   }
-  updateInfo(){
+
+  updateInfo(buttonsContainer){
     let updatedEventName = this.event;
     let updatedEventDate = this.date;
     let updatedEventLocation = this.location;
     let updatedEventGenre = this.genre;
     let eventList = this.eventList1;
     let editButtonsDiv = document.createElement("div");
+
     editButtonsDiv.classList.add("editButtonsDiv")
     eventList.appendChild(editButtonsDiv);
+    
     let updateEventName = document.createElement("input");
     updateEventName.placeholder = "Uppdatera event";
     updateEventName.classList.add("event");
     editButtonsDiv.appendChild(updateEventName);
+
     let updateEventDate = document.createElement("input");
     updateEventDate.type = "date";
     updateEventDate.classList.add("date");
+
     editButtonsDiv.appendChild(updateEventDate);
     let updateEventLocation = document.createElement("input");
     updateEventLocation.placeholder = "Uppdatera plats";
     updateEventLocation.classList.add("location");
+
     editButtonsDiv.appendChild(updateEventLocation);
     let p = document.getElementById("genreInput");
     let updateEventGenre = p.cloneNode(true);
+
     editButtonsDiv.appendChild(updateEventGenre);
     let updateBtn = document.createElement("button");
     editButtonsDiv.appendChild(updateBtn);
     updateBtn.innerHTML = "Update Event";
-    //buttonsContainer.classList.add("hide");
+    buttonsContainer.classList.add("hide"); //Jag provade att avkommentera denna och kommentera bort rad 74. Testa om det funkar!
 
 
     updateBtn.addEventListener("click", function (e) {
-      let buttonsContainer = document.getElementsByClassName("buttons-container");
+      //let buttonsContainer = document.getElementsByClassName("buttons-container");
       if (updateEventName.value != "") {
         updatedEventName.innerHTML = updateEventName.value;
       }

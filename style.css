@@ -84,6 +84,13 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
+.admin-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
 /* .genre{
     float: right;
 } */
