@@ -81,6 +81,8 @@ class Events {
       updateEventLocation.placeholder = "Uppdatera plats";
       updateEventLocation.classList.add("location");
       editButtonsDiv.appendChild(updateEventLocation);
+      let updateEventGenre = document.getElementById("genreInput");
+      editButtonsDiv.appendChild(updateEventGenre);
       let updateBtn = document.createElement("button");
       editButtonsDiv.appendChild(updateBtn);
       updateBtn.innerHTML = "Update Event";
@@ -91,12 +93,14 @@ class Events {
         if (updateEventName.value != "") {
           newEventName.innerHTML = updateEventName.value;
         }
-
         if (updateEventDate.value != "") {
           newEventDate.innerHTML = updateEventDate.value;
         }
         if (updateEventLocation.value != "") {
           newEventLocation.innerHTML = updateEventLocation.value;
+        }
+        if (updateEventGenre.value != "") {
+          newEventGenre.innerHTML = updateEventGenre.value;
         }
         editButtonsDiv.remove();
         buttonsContainer.classList.remove("hide");
