@@ -14,12 +14,13 @@ class Events {
     this.event = document.createElement("span");
     this.date = document.createElement("span");
     this.location = document.createElement("span");
+    this.genre = document.createElement("span");
     this.delete = document.createElement("button");
     this.edit = document.createElement("button");
     this.break = document.createElement("br");
   }
 
-  addEvent(event, date, location) {
+  addEvent(event, date, location, genre) {
     let eventList = document.createElement("div");
     let listHead = document.createElement("div");
     let buttonsContainer = document.createElement("div");
@@ -36,10 +37,13 @@ class Events {
     let newEventDate = this.date;
     this.location.innerHTML = location.value;
     let newEventLocation = this.location;
+    this.genre.innerHTML = genre.value;
+    let newEventGenre = this.genre;
 
     newEventName.classList.add("event");
     newEventDate.classList.add("date");
     newEventLocation.classList.add("location");
+    newEventGenre.classList.add("genre");
 
     eventList.classList.add("eventList");
     listHead.classList.add("listHead");
@@ -50,6 +54,7 @@ class Events {
     listHead.appendChild(newEventName);
     listHead.appendChild(newEventDate);
     listHead.appendChild(newEventLocation);
+    listHead.appendChild(newEventGenre);
     listHead.appendChild(this.break);
     buttonsContainer.appendChild(this.delete);
     buttonsContainer.appendChild(this.edit);
@@ -61,20 +66,23 @@ class Events {
     });
 
     this.edit.addEventListener("click", function (e) {
+      let editButtonsDiv = document.createElement("div");
+      editButtonsDiv.classList.add("editButtonsDiv")
+      eventList.appendChild(editButtonsDiv);
       let updateEventName = document.createElement("input");
       updateEventName.placeholder = "Uppdatera event";
       updateEventName.classList.add("event");
-      eventList.appendChild(updateEventName);
+      editButtonsDiv.appendChild(updateEventName);
       let updateEventDate = document.createElement("input");
       updateEventDate.type = "date";
       updateEventDate.classList.add("date");
-      eventList.appendChild(updateEventDate);
+      editButtonsDiv.appendChild(updateEventDate);
       let updateEventLocation = document.createElement("input");
       updateEventLocation.placeholder = "Uppdatera plats";
       updateEventLocation.classList.add("location");
-      eventList.appendChild(updateEventLocation);
+      editButtonsDiv.appendChild(updateEventLocation);
       let updateBtn = document.createElement("button");
-      eventList.appendChild(updateBtn);
+      editButtonsDiv.appendChild(updateBtn);
       updateBtn.innerHTML = "Update Event";
       buttonsContainer.classList.add("hide");
 
@@ -90,10 +98,7 @@ class Events {
         if (updateEventLocation.value != "") {
           newEventLocation.innerHTML = updateEventLocation.value;
         }
-        updateEventName.remove();
-        updateEventDate.remove();
-        updateEventLocation.remove();
-        updateBtn.remove();
+        editButtonsDiv.remove();
         buttonsContainer.classList.remove("hide");
       });
       // let updateBtn = document.createElement("button");
@@ -113,12 +118,13 @@ class Test {
     this.event = document.getElementById("eventInput");
     this.date = document.getElementById("dateInput");
     this.location = document.getElementById("locationInput");
+    this.genre = document.getElementById("genreInput");
   }
 
   createListItem() {
-    console.log("tuttifrutti");
+
     let listItem = new Events();
-    listItem.addEvent(this.event, this.date, this.location);
+    listItem.addEvent(this.event, this.date, this.location, this.genre);
     this.event.value = null;
     this.location.value = null;
     this.date.value = null;
