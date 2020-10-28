@@ -78,15 +78,11 @@ a {
 }
 /* EVENT LIST CSS */
 
-<<<<<<< HEAD
 .eventTags {
     display: flex;
     justify-content: space-between;
 }
 .listHead{
-=======
-.listHead {
->>>>>>> Abdullahibranch
     /* text-align: center; */
     display: flex;
     flex: 4;
@@ -131,7 +127,6 @@ a {
 
 
 
-<<<<<<< HEAD
 .date{
     /* text-align: center;
     background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);
@@ -142,17 +137,6 @@ a {
     padding: 0px 5px;
      /* min-height: 100vh;     */
 
-=======
-.date {
-    /* text-align: center; */
-    /*background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%);*/
-    background: rgb(104, 40, 42);
-    background: linear-gradient(0deg, rgba(104, 40, 42, 1) 0%, rgba(239, 176, 200, 0.8253676470588236) 100%);
-    margin: 0;
-    background-repeat: no-repeat;
-    padding: 0px 5px;
-    /* min-height: 100vh;  */
->>>>>>> Abdullahibranch
 }
 
 .buttons-container {
@@ -273,15 +257,9 @@ a {
     /* margin: 25px; */
     height: auto;
     width: auto;
-<<<<<<< HEAD
     border: 1px solid #F55E35;
     /* background: rgb(192,17,45);
     background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%); */
-=======
-    border-radius: 3%;
-    /* background: rgb(168,191,246); */
-    background: linear-gradient(#F55E35 60%, #f53535 100%);
->>>>>>> Abdullahibranch
     /*background: linear-gradient(90deg, rgba(168,191,246,0.5) 0%, rgba(101,135,216,0.75) 100%);*/
 }
 
@@ -340,12 +318,9 @@ a {
     color: white;
 }
 
-<<<<<<< HEAD
 .event_text {
     padding-top: 80px;
 }
-=======
->>>>>>> Abdullahibranch
 /* =======  */
 
 /*    margin: 0;
