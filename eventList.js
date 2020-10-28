@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+  //skapar admingränssnitt
   let adminBtn = document.getElementById("adminBtn");
   let adminInput = document.getElementById("adminInput");
   //let listedEvent;
   //let buttonsContainer;
   
   adminBtn.addEventListener("click", (e) => {
+    //visar/gömmer admin tools när man trycker på admin login/admin logout
     if (adminInput.className == "hide") {
       adminInput.classList.remove("hide");
       adminBtn.innerHTML = "ADMIN LOGOUT";
@@ -16,12 +18,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       
     }
   });
-  
-  let sort = new Sort ();
-  let sortBtn = document.getElementById("sortId");
-  sortBtn.addEventListener("click", function(e){
-    sort.sortEvent();
-  })
   
   event.preventDefault();
   let btn = document.getElementById("submitBtn");
@@ -36,6 +32,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
     i++;
   });
   
+  //skapar en klass som sorterar när man rycker på sortera-knappen
+  let sortBtn = document.getElementById("sortId");
+  sortBtn.addEventListener("click", function(e){
+    let sort = new Sort ();
+    sort.sortEventsByDate();
+  })
+
+  /*let genreFilter = document.getElementById("genreFilter");
+  genreFilter.addEventListener("select", function(e) {
+    let sort = new Sort ();
+    sort.filterEventByGenre(e);
+    console.log(e);
+  })*/
+
+  genreFilter.onchange = function () {
+    let selectedGenre = document.getElementById("genreFilter").value;
+    let sort = new Sort();
+    sort.filterEventByGenre(selectedGenre);
+  };
+  
 });
 
 class Events {
@@ -45,14 +61,14 @@ class Events {
     this.eventList = document.createElement("div");
     this.event = document.createElement("span");
     this.date = document.createElement("span");
-    this.location = document.createElement("span");
     this.genre = document.createElement("span");
+    this.location = document.createElement("span");
     this.attend = document.createElement("span");
     this.delete = document.createElement("button");
     this.edit = document.createElement("button");
   }
   
-  addEvent(event, date, location, genre, attend, maxAttend) {
+  addEvent(event, date, genre, location, attend, maxAttend) {
     let eventList = this.eventList;
     let listHead = document.createElement("div");
     let buttonsContainer = document.createElement("div");
@@ -63,23 +79,23 @@ class Events {
     this.delete.classList.add("listBtn");
     this.edit.classList.add("listBtn");
     
-    this.event.innerHTML = event.value;
+    this.event.innerHTML = event;
     let newEventName = this.event;
     //localStorage.setItem("event_name_" + i, event.value);
     
-    this.date.innerHTML = date.value;
+    this.date.innerHTML = date;
     let newEventDate = this.date;
-    this.location.innerHTML = location.value;
-    let newEventLocation = this.location;
-    this.genre.innerHTML = genre.value;
+    this.genre.innerHTML = genre;
     let newEventGenre = this.genre;
-    this.attend.innerHTML = attend.value + "/" + maxAttend.value;
+    this.location.innerHTML = location;
+    let newEventLocation = this.location;
+    this.attend.innerHTML = attend + "/" + maxAttend;
     let newEventAttend = this.attend;
     
     newEventName.classList.add("event");
     newEventDate.classList.add("date");
-    newEventLocation.classList.add("location");
     newEventGenre.classList.add("genre");
+    newEventLocation.classList.add("location");
     newEventAttend.classList.add("attend");
     
     eventList.classList.add("eventList");
@@ -112,8 +128,8 @@ class Events {
   updateInfo(buttonsContainer) {
     let updatedEventName = this.event;
     let updatedEventDate = this.date;
-    let updatedEventLocation = this.location;
     let updatedEventGenre = this.genre;
+    let updatedEventLocation = this.location;
     let eventList = this.eventList;
     let editButtonsDiv = document.createElement("div");
     
@@ -129,7 +145,8 @@ class Events {
     updateEventDate.type = "date";
     updateEventDate.classList.add("date");
     editButtonsDiv.appendChild(updateEventDate);
-
+    
+    //Clonar genre-inputen så man kan ändra genre på specifikt event
     let genreNode = document.getElementById("genreInput");
     let updateEventGenre = genreNode.cloneNode(true);
     editButtonsDiv.appendChild(updateEventGenre);
@@ -152,11 +169,11 @@ class Events {
       if (updateEventDate.value != "") {
         updatedEventDate.innerHTML = updateEventDate.value;
       }
-      if (updateEventLocation.value != "") {
-        updatedEventLocation.innerHTML = updateEventLocation.value;
-      }
       if (updateEventGenre.value != "") {
         updatedEventGenre.innerHTML = updateEventGenre.value;
+      }
+      if (updateEventLocation.value != "") {
+        updatedEventLocation.innerHTML = updateEventLocation.value;
       }
       editButtonsDiv.remove();
       updateBtn.remove();
@@ -169,8 +186,8 @@ class Admin {
   constructor() {
     this.event = document.getElementById("eventInput");
     this.date = document.getElementById("dateInput");
-    this.location = document.getElementById("locationInput");
     this.genre = document.getElementById("genreInput");
+    this.location = document.getElementById("locationInput");
     this.attendInput = document.getElementById("attendInput");
     this.maxAttendInput = document.getElementById("maxAttendInput");
   }
@@ -178,18 +195,18 @@ class Admin {
   createListItem(i) {
     let listedEvent = new Events();
     listedEvent.addEvent(
-      this.event,
-      this.date,
-      this.location,
-      this.genre,
-      this.attendInput,
-      this.maxAttendInput,
+      this.event.value,
+      this.date.value,
+      this.genre.value,
+      this.location.value,
+      this.attendInput.value,
+      this.maxAttendInput.value,
       i
       );
       this.event.value = null;
-      this.location.value = null;
       this.date.value = null;
       this.genre.value = null;
+      this.location.value = null;
       this.attendInput.value = null;
       this.maxAttendInput.value = null;
 
@@ -207,12 +224,9 @@ class Admin {
 
 class Sort{
   constructor(){
-
-  }
-  sortEvent(){
     let event_names = document.getElementsByClassName("listHead");
-    let bigArray = [];
-
+    this.bigArray = [];
+  
     for(let i = 0; i<event_names.length; i++){
       let dateArray = [];
       dateArray.push(event_names[i].childNodes[0].innerHTML); //event
@@ -226,33 +240,78 @@ class Sort{
       //let testArray = attendString.split("");
       
       //dateArray.push; //deltagare / max deltagare
-      bigArray.push(dateArray);
+      this.bigArray.push(dateArray);
+        
     }
-    console.log(typeof bigArray[0][0]);
+  }
 
-    let datesSorted = bigArray.sort((item1, item2) => {
+  sortEventsByDate(){
+    console.log(this.bigArray[0][0]); 
+
+    let datesSorted = this.bigArray.sort((item1, item2) => {
       if(item1[1] < item2[1]) return -1;
       if(item1[1] > item2[1]) return 1;
         return 0;
     });
     //let testArray = dateArray.sort();
     console.log(datesSorted);
+    document.querySelectorAll('.eventList').forEach(e => e.remove());
 
-    for(let i = 0; i <= bigArray.length; i++){
+
+    for(let i = 0; i < this.bigArray.length; i++){
+      let sortEvent = this.bigArray[i][0];
+      let sortDate = this.bigArray[i][1];
+      let sortGenre = this.bigArray[i][2];
+      let sortLocation = this.bigArray[i][3];
+      let sortAttendMin = this.bigArray[i][4];
+      let sortAttendMax = this.bigArray[i][5];
       let listedEvent = new Events();
-      let sortEvent = bigArray[i][0];
-      let sortDate = bigArray[i][1];
-      let sortGenre = bigArray[i][2];
-      let sortLocation = bigArray[i][3];
-      let sortAttendMin = bigArray[i][4];
-      let sortAttendMax = bigArray[i][5];
 
       console.log(sortEvent);
 
       listedEvent.addEvent(sortEvent, sortDate, sortGenre, sortLocation, sortAttendMin, sortAttendMax);
-      
-
-      
      }
-  }
+
+  } 
+  filterEventByGenre(selectedGenre){
+    document.querySelectorAll('.eventList').forEach(e => e.classList.add("hide"));
+
+    for(let i = 0; i < this.bigArray.length; i++){
+      if(this.bigArray[i][2] == selectedGenre) {
+        // let sortEvent = this.bigArray[i][0];
+        // let sortDate = this.bigArray[i][1];
+        // let sortGenre = this.bigArray[i][2];
+        // let sortLocation = this.bigArray[i][3];
+        // let sortAttendMin = this.bigArray[i][4];
+        // let sortAttendMax = this.bigArray[i][5];
+        // let listedEvent = new Events();
+        /*console.log(sortEvent);
+        listedEvent.addEvent(sortEvent, sortDate, sortGenre, sortLocation, sortAttendMin, sortAttendMax);*/
+        document.querySelectorAll('.eventList').forEach(e => e.classList.remove("hide"));
+
+       }
+      }
+      
+    }
+
+    //let userGenre = document.getElementById("genreFilter").input.value;
+    
+    //words.filter(word => word.length > 6)
+
+    // console.log(this.bigArray); 
+    // this.bigArray.filter(curr_value => {
+    //   if (curr_value[2] == selectedGenre){  
+
+    //     console.log("current value = selected Genre");
+
+    //   }
+    //   else{
+    //     //this.bigArray[curr_value].classList.add("hide");
+
+    //   }
+    // })
+    
+  //}
+
 }
+
