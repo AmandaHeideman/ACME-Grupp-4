@@ -3,15 +3,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let adminInput = document.getElementById("adminInput");
 
   adminBtn.addEventListener("click", (e) => {
+    if(adminInput.className == "hide"){
     adminInput.classList.remove("hide");
+    adminBtn.innerHTML = "ADMIN LOGOUT"
+    }
+    else{
+      adminInput.classList.add("hide");
+      adminBtn.innerHTML = "ADMIN LOGIN"
+      listItem.buttonsContainer.classList.add("hide");
+    }
+    
   });
   
   event.preventDefault();
   let btn = document.getElementById("submitBtn");
 
   btn.addEventListener("click", (e) => {
-    let test = new Test();
-    test.createListItem();
+    let admin = new Admin();
+    admin.createListItem();
   });
 });
 
@@ -63,8 +72,9 @@ class Events {
     eventList.appendChild(buttonsContainer);
     listHead.appendChild(newEventName);
     listHead.appendChild(newEventDate);
-    listHead.appendChild(newEventLocation);
     listHead.appendChild(newEventGenre);
+    listHead.appendChild(newEventLocation);
+    
     
     buttonsContainer.appendChild(this.delete);
     buttonsContainer.appendChild(this.edit);
@@ -105,21 +115,23 @@ class Events {
     let updateEventDate = document.createElement("input");
     updateEventDate.type = "date";
     updateEventDate.classList.add("date");
-
     editButtonsDiv.appendChild(updateEventDate);
+
+    let p = document.getElementById("genreInput");
+    let updateEventGenre = p.cloneNode(true);
+    editButtonsDiv.appendChild(updateEventGenre);
+
     let updateEventLocation = document.createElement("input");
     updateEventLocation.placeholder = "Uppdatera plats";
     updateEventLocation.classList.add("location");
-
     editButtonsDiv.appendChild(updateEventLocation);
-    let p = document.getElementById("genreInput");
-    let updateEventGenre = p.cloneNode(true);
-
-    editButtonsDiv.appendChild(updateEventGenre);
+    
+    
+   
     let updateBtn = document.createElement("button");
     eventList.appendChild(updateBtn);
     updateBtn.innerHTML = "Update Event";
-    buttonsContainer.classList.add("hide"); //Jag provade att avkommentera denna och kommentera bort rad 74. Testa om det funkar!
+    buttonsContainer.classList.add("hide");
 
 
     updateBtn.addEventListener("click", function (e) {
@@ -149,7 +161,7 @@ class Events {
 
 }
 
-class Test {
+class Admin {
   constructor() {
     this.event = document.getElementById("eventInput");
     this.date = document.getElementById("dateInput");
