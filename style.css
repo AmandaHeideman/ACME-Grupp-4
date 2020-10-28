@@ -79,7 +79,7 @@ a{
     justify-content: space-between;
 }
 .listHead{
-    
+    /* text-align: center; */
     display: flex;
     flex: 4;
     justify-content: space-between;
@@ -135,8 +135,16 @@ a{
 
 }
 
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
+.editButtonsDiv {
+    display: flex;
+    justify-content: space-between;
+}
 /* 
 //Gör ingen skillnad i css:n, ta bort?
 .nav_container{
@@ -209,7 +217,7 @@ float: left;
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     height: 80%;
     margin: auto;
     margin-top: 30px;
@@ -235,21 +243,24 @@ float: left;
     justify-content: space-between;
     margin-top: 30px;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .displayed_event {
     /* display: inline-flex; */
-    transition: transform .3s;
+    /*transition: transform .3s; */
     /* margin: 25px; */
     height: auto;
     width: auto;
-    border-radius: 3%;
-    background: rgb(168,191,246);
-    background: radial-gradient(circle, rgba(168,191,246,0.5) 60%, rgba(101,135,216,1) 100%);
+    border: 1px solid #F55E35;
+    /* background: rgb(192,17,45);
+    background: linear-gradient(30deg, rgba(101,135,216,1) 0%, rgba(192,17,45,1) 65%); */
     /*background: linear-gradient(90deg, rgba(168,191,246,0.5) 0%, rgba(101,135,216,0.75) 100%);*/
 }   
 
 .displayed_event:hover {
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
+    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 100%);
+    transition: background ease 5s;
 }
 
 .event_container {
@@ -257,14 +268,19 @@ float: left;
     justify-content: center;
     min-width: 400px;
     min-height: 300px;
+    width: auto;
+    padding-top: 20px;
 }
-
-.event_text {
+.event_info {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+
+}
+.event_name {
+    text-align: center;
     color: white;
+    font-size: 30px;
 }
 .event_pic {
     padding: 10px 10px;
@@ -274,19 +290,29 @@ float: left;
     float: left;
 }
 
-.event_date {
-    padding-top: 20px;
-    padding-left: 20px;
+.event_loc_date{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    margin: 10px;
+}
+.event_date {
+    padding-top: 80px;
     color: white;
-
+    text-align: center;
+    font-size: 1.3rem;
 }
 
 .event_location {
     padding-top: 20px;
-    padding-left: 20px;
-    display: flex;
+    font-size: 1.3rem;
     color: white;
+}
+
+.event_text {
+    padding-top: 80px;
 }
 /* =======  */
 
@@ -294,7 +320,6 @@ float: left;
     background: linear-gradient(30deg, rgba(101, 135, 216, 1) 0%, rgba(192, 17, 45, 1) 65%);
     min-height: 100vh;
     color: white;
-
 } */
 
 .container {
@@ -411,6 +436,9 @@ float: left;
 
 }
 
+.hide {
+    display: none;
+}
 
 img{
     border-radius: 10px;
