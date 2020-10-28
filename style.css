@@ -85,7 +85,6 @@ a {
 .listHead{
     /* text-align: center; */
     display: flex;
-    flex: 4;
     justify-content: space-between;
 }
 
@@ -93,6 +92,8 @@ a {
     display: flex;
     justify-content: space-between;
 }
+
+
 
 .admin-container {
     position: fixed;

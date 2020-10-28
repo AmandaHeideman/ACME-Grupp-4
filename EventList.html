@@ -26,10 +26,19 @@
         </div>
       <!--</div>-->
     </div>
-    <div class="hide" id="adminInput">
-    <div><input id="eventInput" type="text" placeholder="Event"></div>
-    <div><input id="dateInput" type="date" placeholder="Datum"></div>
-    <div><select required name="genre" id="genreInput">
+    <div class="hide" id="adminInput"> 
+      <h3>Admin tools:</h3>
+    <div>
+      <label for="eventInput">Event name: </label>
+      <input id="eventInput" type="text" placeholder="Event">
+    </div>
+    <div>
+      <label for="eventDate">Event date: </label>
+      <input id="dateInput" type="date" placeholder="Datum">
+    </div>
+    <div>
+      <label for="eventGenre">Event genre: </label>
+      <select required name="genre" id="genreInput">
       <option value="" disabled selected hidden>Genre</option>
       <option value="Rock">Rock</option>
       <option value="Jazz">Jazz</option>
@@ -39,9 +48,18 @@
       <option value="Funk">Funk</option>
       <option value="Reggae">Reggae</option>
       <option value="Pop">Pop</option>
-    </select></div>
-    
-    <div><input id="locationInput" type="text" placeholder="Plats"></div>
+    </select>
+  </div>
+    <div>
+      <label for="eventLocation">Event location: </label>
+      <input id="locationInput" type="text" placeholder="Plats">
+    </div>
+    <div>
+      <label for="eventAttendees">Event attendees: </label>
+      <input id= "attendInput" type="number" placeholder="Besökare"> 
+      <br>
+      <label for="eventMaxAttendees">Max attendees: </label>
+      <input id="maxAttendInput" type="number" placeholder="Max antal besökare"></div>
     <button id="submitBtn">Skicka</button>
   </div>
     
@@ -52,16 +70,16 @@
         <h4>Date</h4>
         <h4>Genre</h4>
         <h4>Location</h4>
+        <h4>Attendees</h4>
       </div>
       <div id="sort">
         <button id="sortId">Sortera datum</button>
       </div>
-      <div id="eventList" class="eventList">
+      <!--<div id="eventList" class="eventList">
         <div id="listHead" class="listHead">
-            <span id="event" class="event">E-Type</span> <span id="date" class="date">15/6</span> <span id="genre">Poppiiiss</span> <span id="location" class="location">Globen</span>
-          </div>
-        </a>
-      </div>
+            <span id="event" class="event">Town Square Event</span> <span id="date" class="date">2020-11-22</span> <span id="genre">Pop</span> <span id="location" class="location">Edinburgh</span> <span id="attendees" class="attendees">300/500</span>
+        </div>
+      </div>-->
       
     </div>
     
@@ -69,6 +87,6 @@
       <button id="adminBtn">ADMIN LOGIN</button>
     </div>
     
-    <script src="listTesting.js"></script>
+    <script src="eventList.js"></script>
   </body>
 </html>
