@@ -502,3 +502,53 @@ hr {
     background-color:  rgb(223, 21, 21);
     height: 30px;
 }
+
+#byCategory{
+    margin: 0 20%;
+}
+.clicked{
+    background-color: #336828;
+}
+.categBtnCon{
+    margin-left: 30% ;
+    padding-top: 2%;
+
+}
+.categBtnCon button{
+    
+    background-color: #EFB0C8;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 22px;
+    text-align: center;
+    /* display: flex; */
+}
+.categBtnCon button:hover{
+    background-color: #68282A;
+
+}
+button{
+    border:none;
+    background-color: #68282A;
+    color: white;
+    border-radius: 10px;
+    width: 135px;
+    height: 27px;
+    margin: 0 5px;
+    font-weight: bolder;
+}
+
+button:hover{
+    background-color: #EFB0C8;
+    /* color: black; */
+
+
+
+}
+h4{
+    color: #EFB0C8;
+    padding-left: 10px;
+}

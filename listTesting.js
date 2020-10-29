@@ -158,6 +158,10 @@ class Events {
   //     delete this.container;
   // }
 
+  filterByGenre(){
+   
+  }
+
 
 }
 
