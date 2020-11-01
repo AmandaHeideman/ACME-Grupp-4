@@ -1,0 +1,24 @@
+Socialt kontrakt i vår grupp
+
+Vad värderar vi i vår grupp?
+* Att alla får vara med och bestämma
+* Viktigt att ha förståelse för kunskapsskillnader
+* Att alla kan fråga och känna att de lär sig
+* Vi hjälps åt för att se till att alla hänger med
+* Att alla trivs
+
+Vad är viktigt? Vad gör vårt team bättre?
+* Tydlig kommunikation
+* Lyssnar på varandra
+* Högt i tak och prestigelöst, man ska kunna fråga om saker och be om hjälp
+* Återkoppling/uppdatering om någon missat något
+
+Vad vill vi kunna räkna med från varje medlem? Hur vet vi att vi har åstadkommit detta?
+* Att alla är aktivt deltagande och engagerade
+* Närvarande när vi har bestämt möten/träffar
+* Kommunicera vid frånvaro
+
+Definitionen av done
+* När man fått input av övriga i gruppen och funktionen fungerar samt är uppladdad på git
+* När Product Owner har testat funktionen
+* När samtliga förstår vad som gjorts

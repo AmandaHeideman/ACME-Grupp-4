@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-Özgür testar branch.
-=======
-Edited by Abdullahi Aden
->>>>>>> Abdullahibranch
