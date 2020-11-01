@@ -29,7 +29,6 @@ html {
 body {
     font-family: Montserrat;
     height: 100%;
-    /* <<<<<<< HEAD */
     margin: 0;
     background: linear-gradient(30deg, rgba(101, 135, 216, 1) 0%, rgba(192, 17, 45, 1) 65%);
     background-repeat: no-repeat;
@@ -51,8 +50,12 @@ body {
     background-image: url();
 }
 
+.about{
+    width: 80%;
+    margin: auto;
+}
 #scrum-process-image {
-    background: #efb0c8;
+    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); 
     border-radius: 10px;
     width: 70%;
     float: right;
@@ -61,14 +64,14 @@ body {
 
 .eventList {
     text-align: center;
-    width: auto;
+    width: 85%;
     margin: auto;
     margin-bottom: 25px;
     margin-top: 25px;
-    background-color: rgba(245, 94, 53, 1);
     padding: 15px;
     border-radius: 10px;
-
+    font-size: 1.2em;
+    background: linear-gradient(90deg, rgba(192,17,45,1) 0%, rgba(245,94,53,1) 59%, rgba(245,94,53,1) 100%); 
 }
 
 a {
@@ -81,6 +84,15 @@ a {
 .eventTags {
     display: flex;
     justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+#sort{
+    width: 85%;
+    margin: auto;
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
 }
 .listHead{
     /* text-align: center; */
