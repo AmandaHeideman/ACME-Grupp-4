@@ -6,7 +6,7 @@ class Sort {
     for (let i = 0; i < event_names.length; i++) {
       //lägger till all info från varje event i valueArray
       let valueArray = [];
-      console.log(event_names);
+      
       valueArray.push(event_names[i].childNodes[0].innerHTML); //event
       valueArray.push(event_names[i].childNodes[1].innerHTML); //datum
       valueArray.push(event_names[i].childNodes[2].innerHTML); //genre

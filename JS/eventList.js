@@ -24,9 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .forEach((e) => e.classList.add("hide"));
 
       i = storeEvent[6] + 1;
-    } else {
-      eventList.classList.add("hide");
-    }
+    } 
   }
 
   adminBtn.addEventListener("click", (e) => {
