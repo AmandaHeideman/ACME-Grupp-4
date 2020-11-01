@@ -14,56 +14,60 @@
   <body>
     <div class="navbar">
       <!--<div class="nav_container"> //Gör ingenting?-->
-        <div class="logo_div">
-          <a href="main.html"><img src="logga2.png" alt="" class="logo" /></a>
-        </div>
-        <div class="navbar_links">
-          <ul class="menu">
-            <li><a href="main.html">Hem</a></li>
-            <li><a href="EventList.html">Evenemang</a></li>
-            <li><a href="About.html">Om Oss</a></li>
-          </ul>
-        </div>
+      <div class="logo_div">
+        <a href="main.html"><img src="logga2.png" alt="" class="logo" /></a>
+      </div>
+      <div class="navbar_links">
+        <ul class="menu">
+          <li><a href="main.html">Hem</a></li>
+          <li><a href="EventList.html">Evenemang</a></li>
+          <li><a href="About.html">Om Oss</a></li>
+        </ul>
+      </div>
       <!--</div>-->
     </div>
-    <div class="hide" id="adminInput"> 
+    <div class="hide" id="adminInput">
       <h3>Admin tools:</h3>
-    <div>
-      <label for="eventInput">Event name: </label>
-      <input id="eventInput" type="text" placeholder="Event">
+      <div>
+        <label for="eventInput">Event name: </label>
+        <input id="eventInput" type="text" placeholder="Event" />
+      </div>
+      <div>
+        <label for="eventDate">Event date: </label>
+        <input id="dateInput" type="date" placeholder="Datum" />
+      </div>
+      <div>
+        <label for="eventGenre">Event genre: </label>
+        <select required name="genre" id="genreInput">
+          <option value="" disabled selected hidden>Genre</option>
+          <option value="Rock">Rock</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Hiphop">HipHop</option>
+          <option value="Soul">Soul</option>
+          <option value="Funk">Funk</option>
+          <option value="Reggae">Reggae</option>
+          <option value="Pop">Pop</option>
+        </select>
+      </div>
+      <div>
+        <label for="eventLocation">Event location: </label>
+        <input id="locationInput" type="text" placeholder="Plats" />
+      </div>
+      <div>
+        <label for="eventAttendees">Event attendees: </label>
+        <input id="attendInput" type="number" placeholder="Besökare" />
+        <br />
+        <label for="eventMaxAttendees">Max attendees: </label>
+        <input
+          id="maxAttendInput"
+          type="number"
+          placeholder="Max antal besökare"
+        />
+      </div>
+      <button id="submitBtn">Skicka</button>
     </div>
-    <div>
-      <label for="eventDate">Event date: </label>
-      <input id="dateInput" type="date" placeholder="Datum">
-    </div>
-    <div>
-      <label for="eventGenre">Event genre: </label>
-      <select required name="genre" id="genreInput">
-      <option value="" disabled selected hidden>Genre</option>
-      <option value="Rock">Rock</option>
-      <option value="Jazz">Jazz</option>
-      <option value="Electronic">Electronic</option>
-      <option value="Hiphop">HipHop</option>
-      <option value="Soul">Soul</option>
-      <option value="Funk">Funk</option>
-      <option value="Reggae">Reggae</option>
-      <option value="Pop">Pop</option>
-    </select>
-  </div>
-    <div>
-      <label for="eventLocation">Event location: </label>
-      <input id="locationInput" type="text" placeholder="Plats">
-    </div>
-    <div>
-      <label for="eventAttendees">Event attendees: </label>
-      <input id= "attendInput" type="number" placeholder="Besökare"> 
-      <br>
-      <label for="eventMaxAttendees">Max attendees: </label>
-      <input id="maxAttendInput" type="number" placeholder="Max antal besökare"></div>
-    <button id="submitBtn">Skicka</button>
-  </div>
-    
-    
+
     <div id="container" class="container">
       <div class="eventTags">
         <h4>Name</h4>
@@ -76,6 +80,7 @@
         <button id="sortId">Sortera datum</button>
         <select required name="genreFilter" id="genreFilter">
           <option value="" disabled selected hidden>Genre</option>
+          <option value="ShowAll">Show All</option>
           <option value="Rock">Rock</option>
           <option value="Jazz">Jazz</option>
           <option value="Electronic">Electronic</option>
@@ -86,18 +91,17 @@
           <option value="Pop">Pop</option>
         </select>
       </div>
-      <!--div id="eventList" class="eventList">
-        <div id="listHead" class="listHead">
-            <span id="event" class="event">Town Square Event</span> <span id="date" class="date">2020-11-22</span> <span id="genre">Pop</span> <span id="location" class="location">Edinburgh</span> <span id="attendees" class="attendees">300/500</span>
-        </div>>
-      </div-->
-      
+      <div id="eventList" class="eventList">
+        <!-- <div id="listHead" class="listHead"> -->
+        <!--span id="event" class="event">Town Square Event</span> <span id="date" class="date">2020-11-22</span> <span id="genre">Pop</span> <span id="location" class="location">Edinburgh</span> <span id="attendees" class="attendees">300/500</span-->
+        <!-- </div> -->
+      </div>
     </div>
-    
+
     <div class="admin-container">
       <button id="adminBtn">ADMIN LOGIN</button>
     </div>
-    
+
     <script src="eventList.js"></script>
   </body>
 </html>
